@@ -8,9 +8,9 @@ import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import Navbar from "./components/Navbar";
 
 //Pages
-import home from "./pages/home";
-import login from "./pages/login";
-import signup from "./pages/signup";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const theme = createMuiTheme({
   palette: {
@@ -28,8 +28,8 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    useNextVariants: true
-  }
+    useNextVariants: true,
+  },
 });
 
 function App() {
@@ -41,9 +41,9 @@ function App() {
 
           <div className="container">
             <Switch>
-              <Route exact path="/" component={home} />
-              <Route exact path="/login" component={login} />
-              <Route exact path="/signup" component={signup} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
             </Switch>
           </div>
         </Router>

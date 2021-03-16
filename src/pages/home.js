@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 
 import Budcall from "../components/Budcall";
 
-class home extends Component {
+class Home extends Component {
   constructor(props) {
     // Required step: always call the parent class' constructor
     super(props);
@@ -16,8 +16,6 @@ class home extends Component {
     axios
       .get("/budcalls")
       .then(res => {
-        console.log(res.data);
-
         this.setState({
           budcalls: res.data,
         });
@@ -27,7 +25,7 @@ class home extends Component {
 
   render() {
     let recentBudcallsMarkup = this.state.budcalls ? (
-      this.state.budcalls.map((budcall) => <Budcall budcall={budcall} />)
+      this.state.budcalls.map((budcall) => <Budcall key={budcall.budcallId} budcall={budcall} />)
     ) : (
       <p>Loading...</p>
     );
@@ -44,4 +42,4 @@ class home extends Component {
   }
 }
 
-export default home;
+export default Home;
