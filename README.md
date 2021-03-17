@@ -1,6 +1,6 @@
 # GymBuds
 
-GymBuds App, an app for connecting gym users and planning workouts. Currently in development.
+GymBuds, a web app for connecting gym users and planning workouts. Currently in development.
 
 [Server-side code for the app here](https://github.com/cjrcodes/GymBuds-App)
 
@@ -12,7 +12,7 @@ Planned Features:
 - Modify workout posts
 
 Technologies Used:
-- React
-- Firebase
-- Node.js
-- Express
+- React (Frontend JavaScript library)
+- Firebase (Cloud-hosted NoSQL Database provided by Google)
+- Node.js (Server-side JavaScript runtime environment)
+- Express (JavaScript web framework)
