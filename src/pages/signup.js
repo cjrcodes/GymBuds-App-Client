@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const styles = (theme) => ({
-  ...theme.formStyle
+  ...theme.formStyle,
 });
 
 class Signup extends Component {
@@ -43,7 +43,7 @@ class Signup extends Component {
       .post("/signup", newUserData)
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
+        localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`);
         this.setState({ loading: false });
         this.props.history.push("/");
       })
