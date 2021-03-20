@@ -3,6 +3,7 @@ import axios from "axios";
 import Grid from "@material-ui/core/Grid";
 
 import Budcall from "../components/Budcall";
+import Profile from "../components/Profile";
 
 class Home extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Home extends Component {
   componentDidMount() {
     axios
       .get("/budcalls")
-      .then(res => {
+      .then((res) => {
         this.setState({
           budcalls: res.data,
         });
@@ -25,7 +26,9 @@ class Home extends Component {
 
   render() {
     let recentBudcallsMarkup = this.state.budcalls ? (
-      this.state.budcalls.map((budcall) => <Budcall key={budcall.budcallId} budcall={budcall} />)
+      this.state.budcalls.map((budcall) => (
+        <Budcall key={budcall.budcallId} budcall={budcall} />
+      ))
     ) : (
       <p>Loading...</p>
     );
@@ -35,7 +38,7 @@ class Home extends Component {
           {recentBudcallsMarkup}
         </Grid>
         <Grid item sm={4} xs={12}>
-          <p>Profile</p>
+          <Profile />
         </Grid>
       </Grid>
     );
