@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
-import { ThemeProvider } from "@material-ui/core/styles";
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import themeFile from "./util/theme";
 import AuthRoute from "./util/AuthRoute";
@@ -22,6 +22,9 @@ import Signup from "./pages/Signup";
 
 const theme = createMuiTheme(themeFile);
 
+axios.defaults.baseURL =
+  'https://us-central1-gymbuds-34a8c.cloudfunctions.net/api';
+
 const token = localStorage.FBIdToken;
 
 if (token) {
@@ -40,7 +43,7 @@ if (token) {
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
       <Provider store={store}>
         <Router>
           <Navbar />
@@ -54,7 +57,7 @@ function App() {
           </div>
         </Router>
       </Provider>
-    </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 

@@ -86,6 +86,13 @@ export default {
       },
     },
   },
+
+  editDetails: {
+    button: {
+      float: "right",
+    },
+  },
+
   buttons: {
     textAlign: "center",
     "& a": {
