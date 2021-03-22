@@ -3,6 +3,8 @@ import {
   SET_AUTHENTICATED,
   SET_UNAUTHENTICATED,
   LOADING_USER,
+  LIKE_BUDCALL,
+  UNLIKE_BUDCALL,
 } from "../types";
 
 const initialState = {
@@ -32,6 +34,24 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: true,
+      };
+    case LIKE_BUDCALL:
+      return {
+        ...state,
+        likes: [
+          ...state.likes,
+          {
+            userHandle: state.credentials.handle,
+            budcallId: action.payload.budcallId,
+          },
+        ],
+      };
+    case UNLIKE_BUDCALL:
+      return {
+        ...state,
+        likes: state.likes.filter(
+          (like) => like.budcallId !== action.payload.budcallId
+        ),
       };
     default:
       return state;

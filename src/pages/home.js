@@ -1,32 +1,23 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Grid from "@material-ui/core/Grid";
+import PropTypes from "prop-types";
 
 import Budcall from "../components/Budcall";
 import Profile from "../components/Profile";
 
+import { connect } from "react-redux";
+import { getBudcalls } from "../redux/actions/dataActions";
+
 class Home extends Component {
-  constructor(props) {
-    // Required step: always call the parent class' constructor
-    super(props);
-    this.state = {
-      budcalls: [],
-    };
-  }
   componentDidMount() {
-    axios
-      .get("/budcalls")
-      .then((res) => {
-        this.setState({
-          budcalls: res.data,
-        });
-      })
-      .catch((err) => console.log(err));
+    this.props.getBudcalls();
   }
 
   render() {
-    let recentBudcallsMarkup = this.state.budcalls ? (
-      this.state.budcalls.map((budcall) => (
+    const { budcalls, loading } = this.props.data;
+    let recentBudcallsMarkup = !loading ? (
+      budcalls.map((budcall) => (
         <Budcall key={budcall.budcallId} budcall={budcall} />
       ))
     ) : (
@@ -45,4 +36,13 @@ class Home extends Component {
   }
 }
 
-export default Home;
+Home.propTypes = {
+  getBudcalls: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+export default connect(mapStateToProps, { getBudcalls })(Home);
