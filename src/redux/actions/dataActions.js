@@ -8,6 +8,8 @@ import {
   CLEAR_ERRORS,
   SET_ERRORS,
   POST_BUDCALL,
+  STOP_LOADING_UI,
+  SET_BUDCALL,
 } from "../types";
 
 import axios from "axios";
@@ -26,6 +28,17 @@ export const getBudcalls = () => (dispatch) => {
     .catch((err) => {
       dispatch({ type: SET_BUDCALLS, payload: [] });
     });
+};
+
+export const getBudcall = (budcallId) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .get(`/budcall/${budcallId}`)
+    .then((res) => {
+      dispatch({ type: SET_BUDCALL, payload: res.data });
+      dispatch({ type: STOP_LOADING_UI });
+    })
+    .catch((err) => console.log(err));
 };
 
 export const postBudcall = (newBudcall) => (dispatch) => {

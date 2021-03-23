@@ -94,7 +94,7 @@ class PostBudcall extends Component {
                 placeholder="Let your buds know what's the plan, personal record, or check-in"
                 error={errors.body ? true : false}
                 helperText={errors.body}
-                className={classes.TextField}
+                className={classes.textField}
                 onChange={this.handleChange}
                 fullWidth
               />

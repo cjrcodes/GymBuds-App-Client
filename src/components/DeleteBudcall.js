@@ -13,14 +13,9 @@ import DeleteOutline from "@material-ui/icons/DeleteOutline";
 import { connect } from "react-redux";
 import { deleteBudcall } from "../redux/actions/dataActions";
 
-const styles = {
-  deleteButton: {
-    position: "absolute",
-    left: "90%",
-    top: "10%",
-  },
-};
-
+const styles = (theme) => ({
+  ...theme.deleteBudcall,
+});
 class DeleteBudcall extends Component {
   state = {
     open: false,

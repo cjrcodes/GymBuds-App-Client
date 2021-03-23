@@ -5,6 +5,8 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import PropTypes from "prop-types";
 import MyButton from "../util/MyButton";
 import DeleteBudcall from "./DeleteBudcall";
+import BudcallDialog from "./BudcallDialog";
+import LikeButton from "./LikeButton";
 
 //Material UI Components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -38,24 +40,6 @@ const styles = {
   },
 };
 class Budcall extends Component {
-  likedBudcall = () => {
-    if (
-      this.props.user.likes &&
-      this.props.user.likes.find(
-        (like) => like.budcallId === this.props.budcall.budcallId
-      )
-    )
-      return true;
-    else return false;
-  };
-
-  likeBudcall = () => {
-    this.props.likeBudcall(this.props.budcall.budcallId);
-  };
-
-  unlikeBudcall = () => {
-    this.props.unlikeBudcall(this.props.budcall.budcallId);
-  };
   render() {
     dayjs.extend(relativeTime);
 
@@ -76,22 +60,6 @@ class Budcall extends Component {
         credentials: { handle },
       },
     } = this.props;
-
-    const likeButton = !authenticated ? (
-      <MyButton tip="Like">
-        <Link to="/login">
-          <FavoriteBorder color="primary" />
-        </Link>
-      </MyButton>
-    ) : this.likedBudcall() ? (
-      <MyButton tip="Undo like" onClick={this.unlikeBudcall}>
-        <FavoriteIcon color="primary" />
-      </MyButton>
-    ) : (
-      <MyButton tip="Like" onClick={this.likeBudcall}>
-        <FavoriteBorder color="primary" />
-      </MyButton>
-    );
 
     const deleteButton =
       authenticated && userHandle === handle ? (
@@ -116,12 +84,13 @@ class Budcall extends Component {
           {deleteButton}
           <Typography variant="body2">{dayjs(createdAt).fromNow()}</Typography>
           <Typography variant="body1">{body}</Typography>
-          {likeButton}
+          <LikeButton budcallId={budcallId} />
           <span>{likeCount} Likes</span>
-          <MyButton tip="comments">
+          <MyButton tip="Comment">
             <ChatIcon color="primary" />
           </MyButton>
-          <span>{commentCount} comments</span>
+          <span>{commentCount} Comments</span>
+          <BudcallDialog budcallId={budcallId} userHandle={userHandle} />
         </CardContent>
       </Card>
     );

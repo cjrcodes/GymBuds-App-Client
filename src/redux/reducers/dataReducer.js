@@ -5,6 +5,7 @@ import {
   LOADING_DATA,
   DELETE_BUDCALL,
   POST_BUDCALL,
+  SET_BUDCALL,
 } from "../types";
 
 const initialState = {
@@ -12,6 +13,8 @@ const initialState = {
   budcall: {},
   loading: false,
 };
+
+let index = 0;
 
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -26,12 +29,20 @@ export default function (state = initialState, action) {
         budcalls: action.payload,
         loading: false,
       };
+    case SET_BUDCALL:
+      return {
+        ...state,
+        budcall: action.payload,
+      };
     case LIKE_BUDCALL:
     case UNLIKE_BUDCALL:
-      let index = state.budcalls.findIndex(
+      index = state.budcalls.findIndex(
         (budcall) => budcall.budcallId === action.payload.budcallId
       );
       state.budcalls[index] = action.payload;
+      if (state.budcall.budcallId === action.payload.budcallId) {
+        state.budcall = action.payload;
+      }
       return {
         ...state,
       };

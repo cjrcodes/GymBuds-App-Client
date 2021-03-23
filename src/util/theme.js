@@ -110,6 +110,47 @@ export default {
     },
   },
 
+  deleteBudcall: {
+    deleteButton: {
+      position: "absolute",
+      left: "90%",
+      top: "10%",
+    },
+  },
+
+  budcallDialog: {
+    invisibleSeparator: {
+      border: "none",
+      margin: 4,
+    },
+    profileImage: {
+      maxWidth: 200,
+      height: 200,
+      borderRadius: "50%",
+      objectFit: "cover",
+    },
+
+    dialogContent: {
+      padding: 20,
+    },
+
+    closeButton: {
+      position: "absolute",
+      left: "90%",
+    },
+
+    expandButton: {
+      position: "absolute",
+      left: "90%",
+    },
+
+    spinnerDiv: {
+      textAlign: "center",
+      marginTop: 40,
+      marginBottom: 50,
+    },
+  },
+
   buttons: {
     textAlign: "center",
     "& a": {
