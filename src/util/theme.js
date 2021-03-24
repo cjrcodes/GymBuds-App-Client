@@ -119,6 +119,12 @@ export default {
   },
 
   budcallDialog: {
+    visibleSeparator: {
+      width: "100%",
+      borderBottom: "1px solid rgba(0,0,0,0.1)",
+      marginBottom: 20,
+    },
+
     invisibleSeparator: {
       border: "none",
       margin: 4,
@@ -148,6 +154,17 @@ export default {
       textAlign: "center",
       marginTop: 40,
       marginBottom: 50,
+    },
+
+    commentImage: {
+      maxWidth: "100%",
+      height: 100,
+      objectFit: "cover",
+      borderRadius: "50%",
+    },
+
+    commentData: {
+      marginLeft: 20,
     },
   },
 

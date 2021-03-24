@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Grid from "@material-ui/core/Grid";
 import PropTypes from "prop-types";
 
-import Budcall from "../components/Budcall";
-import Profile from "../components/Profile";
+import Budcall from "../components/budcall/Budcall";
+import Profile from "../components/profile/Profile";
 
 import { connect } from "react-redux";
 import { getBudcalls } from "../redux/actions/dataActions";

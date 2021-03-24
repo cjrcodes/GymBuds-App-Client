@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import PropTypes from "prop-types";
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 import DeleteBudcall from "./DeleteBudcall";
 import BudcallDialog from "./BudcallDialog";
 import LikeButton from "./LikeButton";
@@ -22,7 +22,7 @@ import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 //Redux
 import { connect } from "react-redux";
-import { likeBudcall, unlikeBudcall } from "../redux/actions/dataActions";
+import { likeBudcall, unlikeBudcall } from "../../redux/actions/dataActions";
 
 const styles = {
   card: {

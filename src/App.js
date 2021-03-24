@@ -13,7 +13,7 @@ import store from "./redux/store";
 import { SET_AUTHENTICATED } from "./redux/types";
 import { logoutUser, getUserData } from "./redux/actions/userActions";
 //Components
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 
 //Pages
 import Home from "./pages/Home";
@@ -23,7 +23,7 @@ import Signup from "./pages/Signup";
 const theme = createMuiTheme(themeFile);
 
 axios.defaults.baseURL =
-  'https://us-central1-gymbuds-34a8c.cloudfunctions.net/api';
+  "https://us-central1-gymbuds-34a8c.cloudfunctions.net/api";
 
 const token = localStorage.FBIdToken;
 

@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 import LikeButton from "./LikeButton";
-
+import Comments from "./Comments";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -18,7 +18,7 @@ import UnfoldMore from "@material-ui/icons/UnfoldMore";
 import ChatIcon from "@material-ui/icons/Chat";
 
 import { connect } from "react-redux";
-import { getBudcall } from "../redux/actions/dataActions";
+import { getBudcall } from "../../redux/actions/dataActions";
 
 const styles = (theme) => ({
   ...theme.budcallDialog,
@@ -49,6 +49,7 @@ class BudcallDialog extends Component {
         commentCount,
         userImage,
         userHandle,
+        comments,
       },
 
       UI: { loading },
@@ -85,6 +86,8 @@ class BudcallDialog extends Component {
           </MyButton>
           <span>{commentCount} Comments</span>
         </Grid>
+        <hr className={classes.visibleSeparator} />
+        <Comments comments={comments} />
       </Grid>
     );
 
