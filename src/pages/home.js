@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 import Budcall from "../components/budcall/Budcall";
 import Profile from "../components/profile/Profile";
+import BudcallSkeleton from "../util/BudcallSkeleton";
+import ProfileSkeleton from "../util/ProfileSkeleton";
 
 import { connect } from "react-redux";
 import { getBudcalls } from "../redux/actions/dataActions";
@@ -20,7 +22,7 @@ class Home extends Component {
         <Budcall key={budcall.budcallId} budcall={budcall} />
       ))
     ) : (
-      <p>Loading...</p>
+      <BudcallSkeleton />
     );
     return (
       <Grid container spacing={16}>

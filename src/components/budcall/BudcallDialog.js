@@ -12,13 +12,14 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import CommentForm from "./CommentForm";
 
 import CloseIcon from "@material-ui/icons/Close";
 import UnfoldMore from "@material-ui/icons/UnfoldMore";
 import ChatIcon from "@material-ui/icons/Chat";
 
 import { connect } from "react-redux";
-import { getBudcall } from "../../redux/actions/dataActions";
+import { getBudcall, clearErrors } from "../../redux/actions/dataActions";
 
 const styles = (theme) => ({
   ...theme.budcallDialog,
@@ -27,15 +28,36 @@ const styles = (theme) => ({
 class BudcallDialog extends Component {
   state = {
     open: false,
+    oldPath: "",
+    newPath: "",
   };
 
+  componentDidMount() {
+    if (this.props.openDialog) {
+      this.handleOpen();
+    }
+  }
+
   handleOpen = () => {
-    this.setState({ open: true });
+    let oldPath = window.location.pathname;
+
+    const { userHandle, budcallId } = this.props;
+    const newPath = `/users/${userHandle}/budcall/${budcallId}`;
+
+    if (oldPath === newPath) {
+      oldPath = `/users/${userHandle}`;
+    }
+
+    window.history.pushState(null, null, newPath);
+
+    this.setState({ open: true, oldPath, newPath });
     this.props.getBudcall(this.props.budcallId);
   };
 
   handleClose = () => {
+    window.history.pushState(null, null, this.state.oldPath);
     this.setState({ open: false });
+    this.props.clearErrors();
   };
 
   render() {
@@ -87,6 +109,7 @@ class BudcallDialog extends Component {
           <span>{commentCount} Comments</span>
         </Grid>
         <hr className={classes.visibleSeparator} />
+        <CommentForm budcallId={budcallId} />
         <Comments comments={comments} />
       </Grid>
     );
@@ -123,6 +146,7 @@ class BudcallDialog extends Component {
 }
 
 BudcallDialog.propTypes = {
+  clearErrors: PropTypes.func.isRequired,
   getBudcall: PropTypes.func.isRequired,
   budcallId: PropTypes.string.isRequired,
   userHandle: PropTypes.string.isRequired,
@@ -137,6 +161,7 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
   getBudcall,
+  clearErrors,
 };
 
 export default connect(

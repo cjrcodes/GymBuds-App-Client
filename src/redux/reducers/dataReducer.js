@@ -6,6 +6,7 @@ import {
   DELETE_BUDCALL,
   POST_BUDCALL,
   SET_BUDCALL,
+  SUBMIT_COMMENT,
 } from "../types";
 
 const initialState = {
@@ -60,6 +61,15 @@ export default function (state = initialState, action) {
         ...state,
         budcalls: [action.payload, ...state.budcalls],
       };
+    case SUBMIT_COMMENT:
+      return {
+        ...state,
+        budcall: {
+          ...state.budcall,
+          comments: [action.payload, ...state.budcall.comments],
+        },
+      };
+
     default:
       return state;
   }

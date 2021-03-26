@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import EditDetails from "./EditDetails";
 import MyButton from "../../util/MyButton";
+import ProfileSkeleton from "../../util/ProfileSkeleton";
 
 //Redux imports
 import { logoutUser, uploadImage } from "../../redux/actions/userActions";
@@ -155,14 +156,14 @@ class Profile extends Component {
               <CalendarToday color="primary" />{" "}
               <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
             </div>
-            
+
             <MyButton
-                tip="Logout"
-                onClick={this.handleLogout}
-                btnClassName="button"
-              >
-                <KeyboardReturn color="primary" />
-              </MyButton>
+              tip="Logout"
+              onClick={this.handleLogout}
+              btnClassName="button"
+            >
+              <KeyboardReturn color="primary" />
+            </MyButton>
             <EditDetails />
           </div>
         </Paper>
@@ -192,7 +193,7 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <p>Loading...</p>
+      <ProfileSkeleton />
     );
 
     return profileMarkup;

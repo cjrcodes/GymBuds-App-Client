@@ -90,7 +90,11 @@ class Budcall extends Component {
             <ChatIcon color="primary" />
           </MyButton>
           <span>{commentCount} Comments</span>
-          <BudcallDialog budcallId={budcallId} userHandle={userHandle} />
+          <BudcallDialog
+            budcallId={budcallId}
+            userHandle={userHandle}
+            openDialog={this.props.openDialog}
+          />
         </CardContent>
       </Card>
     );
@@ -98,23 +102,14 @@ class Budcall extends Component {
 }
 
 Budcall.propTypes = {
-  likeBudcall: PropTypes.func.isRequired,
-  unlikeBudcall: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
   budcall: PropTypes.object.isRequired,
   classes: PropTypes.object.isRequired,
+  openDialog: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-const mapActionsToProps = {
-  likeBudcall,
-  unlikeBudcall,
-};
-
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(withStyles(styles)(Budcall));
+export default connect(mapStateToProps)(withStyles(styles)(Budcall));

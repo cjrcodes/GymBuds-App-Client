@@ -21,7 +21,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import EditIcon from "@material-ui/icons/Edit";
 
 const styles = (theme) => ({
-  ...theme.postBudcall,
+  ...theme.theme,
 });
 
 class PostBudcall extends Component {
