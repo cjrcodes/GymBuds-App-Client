@@ -20,5 +20,5 @@ Planned Features:
 Technologies Used:
 - React (Frontend JavaScript library)
 - Firebase (Cloud-hosted NoSQL Database provided by Google)
-- Node.js (Server-side JavaScript runtime environment)
+- Node.js (JavaScript runtime environment)
 - Express (JavaScript web framework)
