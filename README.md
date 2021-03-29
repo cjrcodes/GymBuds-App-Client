@@ -1,6 +1,10 @@
 # GymBuds
 
-GymBuds, a web app for connecting gym users and planning workouts.
+GymBuds, a web app for connecting gym users and planning workouts. (In progress)
+
+[Check it out here](https://gymbuds-34a8c.web.app/)
+
+
 
 ![Project Preview](https://github.com/cjrcodes/GymBuds-App-Client/blob/main/src/images/preview32921.png)
 
