@@ -47,15 +47,21 @@ class Login extends Component {
     });
   };
   render() {
-    const { classes, UI: { loading },} = this.props;
+    const {
+      classes,
+      UI: { loading },
+    } = this.props;
     const { errors } = this.state;
 
     return (
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <img src={AppIcon} alt="dumbbell" className={classes.image} />
-          <Typography variant="h2" className={classes.pageTitle}>
+          <Typography variant="h2" className={classes.appTitle}>
+            GymBuds
+          </Typography>
+          <img src={AppIcon} alt="dumbbell" className={classes.imageLogo} />
+          <Typography variant="h4" className={classes.pageTitle}>
             Login
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
@@ -64,11 +70,14 @@ class Login extends Component {
               name="email"
               type="email"
               label="Email"
+              align="center"
+              inputProps={{ style: { textAlign: "center" } }}
               className={classes.textField}
               helperText={errors.email}
               error={errors.email ? true : false}
               value={this.state.email}
               onChange={this.handleChange}
+              variant="outlined"
               fullWidth
             />
             <TextField
@@ -76,11 +85,13 @@ class Login extends Component {
               name="password"
               type="password"
               label="Password"
+              inputProps={{ style: { textAlign: "center" } }}
               className={classes.textField}
               helperText={errors.password}
               error={errors.password ? true : false}
               value={this.state.password}
               onChange={this.handleChange}
+              variant="outlined"
               fullWidth
             />
             {errors.general && (
@@ -101,9 +112,12 @@ class Login extends Component {
               )}
             </Button>
             <br />
-            <small>
-              Don't have an account? Sign up <Link to="/signup">here</Link>
-            </small>
+            <br />
+            <br />
+
+            <medium>
+              Don't have an account? <Link to="/signup">Sign up here</Link>
+            </medium>
           </form>
         </Grid>
         <Grid item sm />

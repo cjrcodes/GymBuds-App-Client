@@ -82,7 +82,7 @@ class PostBudcall extends Component {
           >
             <CloseIcon />
           </MyButton>
-          <DialogTitle>Post a new budcall</DialogTitle>
+          <DialogTitle>Post a budcall</DialogTitle>
           <DialogContent>
             <form onSubmit={this.handleSubmit}>
               <TextField

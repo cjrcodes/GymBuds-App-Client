@@ -49,7 +49,7 @@ function App() {
         <Router>
           <Navbar />
 
-          <div className="container">
+          <div className="container" >
             <Switch>
               <Route exact path="/" component={Home} />
               <AuthRoute exact path="/login" component={Login} />

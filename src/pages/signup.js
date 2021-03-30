@@ -65,8 +65,11 @@ class Signup extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
+          <Typography variant="h2" className={classes.appTitle}>
+            GymBuds
+          </Typography>
           <img src={AppIcon} alt={"Dumbbell"} className={classes.image} />
-          <Typography variant="h2" className={classes.pageTitle}>
+          <Typography variant="h4" className={classes.pageTitle}>
             Signup
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
@@ -80,6 +83,8 @@ class Signup extends Component {
               error={errors.email ? true : false}
               value={this.state.email}
               onChange={this.handleChange}
+              variant="outlined"
+
               fullWidth
             />
             <TextField
@@ -92,6 +97,8 @@ class Signup extends Component {
               error={errors.password ? true : false}
               value={this.state.password}
               onChange={this.handleChange}
+              variant="outlined"
+
               fullWidth
             />
             <TextField
@@ -104,6 +111,8 @@ class Signup extends Component {
               error={errors.confirmPassword ? true : false}
               value={this.state.confirmPassword}
               onChange={this.handleChange}
+              variant="outlined"
+
               fullWidth
             />
             <TextField
@@ -116,6 +125,8 @@ class Signup extends Component {
               error={errors.handle ? true : false}
               value={this.state.handle}
               onChange={this.handleChange}
+              variant="outlined"
+
               fullWidth
             />
             {errors.general && (
@@ -125,7 +136,7 @@ class Signup extends Component {
             )}
             <Button
               type="submit"
-              cariant="contained"
+              variant="contained"
               color="primary"
               className={classes.button}
               disabled={loading}
@@ -136,10 +147,12 @@ class Signup extends Component {
               )}
             </Button>
             <br></br>
-            <small>
+            <br></br>
+
+            <medium>
               {" "}
-              Already a member? Login <Link to="/login">here</Link>
-            </small>
+              Already a member? <Link to="/login">Login here</Link>
+            </medium>
           </form>
         </Grid>
         <Grid item sm />

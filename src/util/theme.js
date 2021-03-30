@@ -1,25 +1,32 @@
+import { orange } from "@material-ui/core/colors";
+import { lightBlue } from "@material-ui/core/colors";
+
 export default {
   palette: {
-    primary: {
-      light: "#ffac33",
-      main: "#ff9800",
-      dark: "#b26a00",
-      contrastText: "#fff",
-    },
-    secondary: {
-      light: "#ffef62",
-      main: "#ffeb3b",
-      dark: "#b2a429",
-      contrastText: "#fff",
-    },
+    primary: orange,
+    secondary: lightBlue,
   },
   typography: {
     useNextVariants: true,
   },
 
   formStyle: {
+    appTitle: {
+      fontFamily: "Recursive",
+      color: "#ff9800",
+      background:
+        "-webkit-linear-gradient(90deg, rgb(255, 179, 0) 0%, rgb(189, 123, 0) 100%)",
+      backgroundClip: "text",
+      textFillColor: "transparent",
+      filter: "drop-shadow(2px 3px #333)",
+    },
+
     form: {
       textAlign: "center",
+    },
+
+    imageLogo: {
+      margin: "20px auto 20px auto",
     },
 
     image: {
@@ -28,15 +35,20 @@ export default {
 
     pageTitle: {
       margin: "20px auto 20px auto",
+      fontFamily: "Josefin Sans",
+      color: "#eee",
     },
 
     textField: {
       margin: "20px auto 20px auto",
+      textAlign: "center",
+      fontFamily: "Heebo",
     },
 
     button: {
       marginTop: 20,
       position: "relative",
+      fontFamily: "Josefin Sans",
     },
 
     customError: {
@@ -48,6 +60,10 @@ export default {
     progress: {
       position: "absolute",
     },
+
+    medium: {
+      fontFamily: "Heebo",
+    },
   },
 
   profile: {
@@ -58,6 +74,7 @@ export default {
         position: "absolute",
         top: "80%",
         left: "70%",
+        fontFamily: "Heebo",
       },
     },
     "& .profile-image": {
@@ -171,11 +188,13 @@ export default {
       position: "relative",
       margin: 10,
       left: "40%",
+      fontFamily: "Heebo",
     },
   },
 
   buttons: {
     textAlign: "center",
+
     "& a": {
       margin: "20px 10px",
     },
