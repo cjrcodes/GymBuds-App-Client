@@ -78,6 +78,8 @@ class Signup extends Component {
               name="email"
               type="email"
               label="Email"
+              inputProps={{ style: { textAlign: "center" } }}
+
               className={classes.textField}
               helperText={errors.email}
               error={errors.email ? true : false}
@@ -92,6 +94,8 @@ class Signup extends Component {
               name="password"
               type="password"
               label="Password"
+              inputProps={{ style: { textAlign: "center" } }}
+
               className={classes.textField}
               helperText={errors.password}
               error={errors.password ? true : false}
@@ -106,6 +110,8 @@ class Signup extends Component {
               name="confirmPassword"
               type="password"
               label="Confirm Password"
+              inputProps={{ style: { textAlign: "center" } }}
+
               className={classes.textField}
               helperText={errors.confirmPassword}
               error={errors.confirmPassword ? true : false}
@@ -120,6 +126,8 @@ class Signup extends Component {
               name="handle"
               type="text"
               label="Handle"
+              inputProps={{ style: { textAlign: "center" } }}
+
               className={classes.textField}
               helperText={errors.handle}
               error={errors.handle ? true : false}
@@ -153,6 +161,9 @@ class Signup extends Component {
               {" "}
               Already a member? <Link to="/login">Login here</Link>
             </medium>
+            <br />
+            <br />
+
           </form>
         </Grid>
         <Grid item sm />

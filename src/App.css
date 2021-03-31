@@ -22,6 +22,7 @@ body {
 
 .nav-container {
   margin: auto;
+  color: white;
 }
 
 .nav-container svg {
@@ -40,8 +41,11 @@ a {
     rgb(255, 179, 0) 0%,
     rgb(189, 123, 0) 100%
   );
+  color: white;
 }
 
 .nav-button {
+  color: white;
+
   font-family: "Josefin Sans";
 }

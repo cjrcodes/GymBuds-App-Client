@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { postBudcall, clearErrors } from "../../redux/actions/dataActions";
 
 //Material UI Imports
+import Box from '@material-ui/core/Box';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -21,7 +22,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import EditIcon from "@material-ui/icons/Edit";
 
 const styles = (theme) => ({
-  ...theme.theme,
+  ...theme.postBudcall,
 });
 
 class PostBudcall extends Component {
@@ -98,10 +99,13 @@ class PostBudcall extends Component {
                 onChange={this.handleChange}
                 fullWidth
               />
+              <Box display="flex" alignItems="center" justifyContent="center">
               <Button
+              
                 type="submit"
                 variant="contained"
                 color="primary"
+                mx="auto"
                 className={classes.submitButton}
                 disabled={loading}
               >
@@ -113,6 +117,7 @@ class PostBudcall extends Component {
                   />
                 )}
               </Button>
+              </Box>
             </form>
           </DialogContent>
         </Dialog>

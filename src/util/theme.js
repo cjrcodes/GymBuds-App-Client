@@ -13,7 +13,7 @@ export default {
   formStyle: {
     appTitle: {
       fontFamily: "Recursive",
-      color: "#ff9800",
+
       background:
         "-webkit-linear-gradient(90deg, rgb(255, 179, 0) 0%, rgb(189, 123, 0) 100%)",
       backgroundClip: "text",
@@ -49,6 +49,7 @@ export default {
       marginTop: 20,
       position: "relative",
       fontFamily: "Josefin Sans",
+      color: "white",
     },
 
     customError: {
@@ -105,6 +106,7 @@ export default {
   },
 
   editDetails: {
+    
     button: {
       float: "right",
     },
@@ -113,17 +115,20 @@ export default {
   postBudcall: {
     submitButton: {
       position: "relative",
-      float: "right",
+      justifyContent: "center",
       marginTop: 10,
+
     },
     progressSpinner: {
       position: "absolute",
     },
 
     closeButton: {
-      position: "absolute",
-      left: "91%",
-      top: "6%",
+      
+      position: 'absolute',
+    left: '90%',
+    top: '3%',
+      
     },
   },
 
