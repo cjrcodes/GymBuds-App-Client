@@ -24,21 +24,9 @@ import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import { connect } from "react-redux";
 import { likeBudcall, unlikeBudcall } from "../../redux/actions/dataActions";
 
-const styles = {
-  card: {
-    position: "relative",
-    display: "flex",
-    marginBottom: 20,
-  },
-
-  image: {
-    minWidth: 200,
-  },
-  content: {
-    padding: 25,
-    objectFit: "cover",
-  },
-};
+const styles = (theme) => ({
+  ...theme.budcall,
+});
 class Budcall extends Component {
   render() {
     dayjs.extend(relativeTime);

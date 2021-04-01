@@ -18,7 +18,7 @@ class Navbar extends Component {
   render() {
     const { authenticated } = this.props;
     return (
-      <AppBar className = 'app-bar'>
+      <AppBar className="app-bar">
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
@@ -32,11 +32,21 @@ class Navbar extends Component {
             </Fragment>
           ) : (
             <Fragment>
-              <Button color="inherit" component={Link} to="/login" className="nav-button">
+              <Button
+                color="inherit"
+                component={Link}
+                to="/login"
+                className="nav-button"
+              >
                 Login
               </Button>
-              
-              <Button color="inherit" component={Link} to="/signup"  className="nav-button">
+
+              <Button
+                color="inherit"
+                component={Link}
+                to="/signup"
+                className="nav-button"
+              >
                 Signup
               </Button>
             </Fragment>

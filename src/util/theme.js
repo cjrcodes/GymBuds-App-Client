@@ -67,46 +67,69 @@ export default {
     },
   },
 
-  profile: {
-    "& .image-wrapper": {
-      textAlign: "center",
-      position: "relative",
-      "& button": {
-        position: "absolute",
-        top: "80%",
-        left: "70%",
-        fontFamily: "Heebo",
+  profileCard: {
+    paper: {
+      color: "white",
+
+      background:
+        "-webkit-linear-gradient(90deg, rgb(0, 106, 228) 0%, rgb(34, 193, 195) 100%)",
+      padding: 10,
+      marginLeft: 20,
+      marginRight: 20,
+    },
+    profile: {
+      color: "white",
+      fontFamily: "Heebo",
+      background:
+        "-webkit-linear-gradient(90deg, rgb(0, 80, 150) 30%, rgb(189, 90, 0) 100%)",
+      "& .image-wrapper": {
+        textAlign: "center",
+        position: "relative",
+        "& button": {
+          position: "absolute",
+          top: "80%",
+          left: "70%",
+        },
       },
-    },
-    "& .profile-image": {
-      width: 200,
-      height: 200,
-      objectFit: "cover",
-      maxWidth: "100%",
-      borderRadius: "50%",
-    },
-    "& .profile-details": {
-      textAlign: "center",
-      "& span, svg": {
-        verticalAlign: "middle",
+      "& .profile-image": {
+        width: 200,
+        height: 200,
+        objectFit: "cover",
+        maxWidth: "100%",
+        borderRadius: "50%",
       },
-      "& a": {
-        color: "#00bcd4",
+      "& .profile-details": {
+        textAlign: "center",
+        "& span, svg": {
+          verticalAlign: "middle",
+        },
+        "& a": {
+          color: "#ff9800",
+        },
       },
-    },
-    "& hr": {
-      border: "none",
-      margin: "0 0 10px 0",
-    },
-    "& svg.button": {
-      "&:hover": {
-        cursor: "pointer",
+      "& hr": {
+        border: "none",
+        margin: "0 0 10px 0",
+      },
+      "& svg.button": {
+        "&:hover": {
+          cursor: "pointer",
+        },
+      },
+
+      buttons: {
+        textAlign: "center",
+        "& a": {
+          color: "white",
+          fontFamily: "Josefin Sans",
+
+          margin: "20px 10px",
+        },
       },
     },
   },
 
   editDetails: {
-    
     button: {
       float: "right",
     },
@@ -117,18 +140,15 @@ export default {
       position: "relative",
       justifyContent: "center",
       marginTop: 10,
-
     },
     progressSpinner: {
       position: "absolute",
     },
 
     closeButton: {
-      
-      position: 'absolute',
-    left: '90%',
-    top: '3%',
-      
+      position: "absolute",
+      left: "90%",
+      top: "3%",
     },
   },
 
@@ -205,10 +225,32 @@ export default {
     },
   },
 
+  budcall: {
+    card: {
+      position: "relative",
+      display: "flex",
+      marginBottom: 20,
+      background:
+        "-webkit-linear-gradient(45deg, rgba(0, 106, 228, 0) 80%, rgb(189, 123, 0) 100%)",
+    },
+
+    image: {
+      minWidth: 200,
+    },
+    content: {
+      color: "white",
+
+      padding: 25,
+      objectFit: "cover",
+    },
+  },
+
   skeleton: {
     card: {
       display: "flex",
       marginBottom: 20,
+      background:
+        "-webkit-linear-gradient(90deg, rgb(0, 106, 228) 0%, rgb(189, 123, 0) 100%)",
     },
 
     cardContent: {
@@ -254,6 +296,7 @@ export default {
     handle: {
       height: 20,
       backgroundColor: "#ff9800",
+
       width: 60,
       margin: "0 auto 7px auto",
     },

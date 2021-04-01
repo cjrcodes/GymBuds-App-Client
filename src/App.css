@@ -4,6 +4,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   min-height: 100%;
+  
 }
 
 body {
@@ -13,25 +14,31 @@ body {
     rgb(0, 106, 228) 0%,
     rgb(0, 185, 176) 100%
   );
+  
+  
 }
 
 .container {
   margin: 80px auto 0 auto;
   max-width: 1200px;
+  
 }
 
 .nav-container {
   margin: auto;
   color: white;
+  
 }
 
 .nav-container svg {
   color: #fff;
+  
 }
 
 a {
   text-decoration: none;
   color: rgb(255, 187, 0);
+  
 }
 
 .app-bar {
@@ -42,10 +49,15 @@ a {
     rgb(189, 123, 0) 100%
   );
   color: white;
+  
 }
 
 .nav-button {
-  color: white;
+  color: rgb(223, 0, 0);
 
-  font-family: "Josefin Sans";
+}
+
+medium{
+    color: white;
+
 }

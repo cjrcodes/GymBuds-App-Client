@@ -28,52 +28,10 @@ import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 
 const styles = (theme) => ({
-  paper: {
-    padding: 20,
-    margin: 20,
-  },
-  profile: {
-    "& .image-wrapper": {
-      textAlign: "center",
-      position: "relative",
-      "& button": {
-        position: "absolute",
-        top: "80%",
-        left: "70%",
-      },
-    },
-    "& .profile-image": {
-      width: 200,
-      height: 200,
-      objectFit: "cover",
-      maxWidth: "100%",
-      borderRadius: "50%",
-    },
-    "& .profile-details": {
-      textAlign: "center",
-      "& span, svg": {
-        verticalAlign: "middle",
-      },
-      "& a": {
-        color: theme.palette.primary.main,
-      },
-    },
-    "& hr": {
-      border: "none",
-      margin: "0 0 10px 0",
-    },
-    "& svg.button": {
-      "&:hover": {
-        cursor: "pointer",
-      },
-    },
-  },
-  buttons: {
-    textAlign: "center",
-    "& a": {
-      margin: "20px 10px",
-    },
-  },
+  ...theme.profileCard,
+  ...theme.profileCard.profile,
+
+  ...theme.formStyle,
 });
 
 class Profile extends Component {
@@ -170,7 +128,7 @@ class Profile extends Component {
       ) : (
         <Paper className={classes.paper}>
           <Typography variant="body2" align="center">
-            No profile found, please login
+            No profile found, please login or signup
           </Typography>
           <div className={classes.buttons}>
             <Button
