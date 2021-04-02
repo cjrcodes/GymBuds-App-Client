@@ -6,7 +6,7 @@ GymBuds, a social workout planner, designed to coordinate workouts and share fit
 
 
 
-![Project Preview](https://github.com/cjrcodes/GymBuds-App-Client/blob/main/src/images/preview33021.png)
+![Project Preview](https://github.com/cjrcodes/GymBuds-App-Client/blob/main/src/images/preview4221.png)
 
 [Server-side code for the app here](https://github.com/cjrcodes/GymBuds-App)
 
