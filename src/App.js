@@ -16,10 +16,10 @@ import { logoutUser, getUserData } from "./redux/actions/userActions";
 import Navbar from "./components/layout/Navbar";
 
 //Pages
-import Home from "./pages/Home.js";
-import Login from "./pages/Login.js";
-import Signup from "./pages/Signup.js";
-import User from "./pages/User.js";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import User from "./pages/User";
 
 const theme = createMuiTheme(themeFile);
 
