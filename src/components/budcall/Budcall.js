@@ -19,6 +19,12 @@ import Typography from "@material-ui/core/Typography";
 import ChatIcon from "@material-ui/icons/Chat";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
 
 //Redux
 import { connect } from "react-redux";
@@ -26,6 +32,12 @@ import { likeBudcall, unlikeBudcall } from "../../redux/actions/dataActions";
 
 const styles = (theme) => ({
   ...theme.budcall,
+  root: {
+    display: 'flex',
+  },
+  paper: {
+    marginRight: theme.spacing(2),
+  },
 });
 class Budcall extends Component {
   render() {
@@ -83,6 +95,7 @@ class Budcall extends Component {
             userHandle={userHandle}
             openDialog={this.props.openDialog}
           />
+          
         </CardContent>
       </Card>
     );

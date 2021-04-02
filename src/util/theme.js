@@ -231,7 +231,7 @@ export default {
       display: "flex",
       marginBottom: 20,
       background:
-        "-webkit-linear-gradient(45deg, rgba(0, 106, 228, 0) 80%, rgb(189, 123, 0) 100%)",
+        "-webkit-linear-gradient(45deg, rgba(0, 106, 228, 1) 80%, rgba(189, 123, 0, 0) 100%)",
     },
 
     image: {

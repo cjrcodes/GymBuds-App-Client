@@ -51,6 +51,7 @@ class Navbar extends Component {
               </Button>
             </Fragment>
           )}
+          
         </Toolbar>
       </AppBar>
     );
