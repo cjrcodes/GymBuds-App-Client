@@ -1,7 +1,7 @@
 import { orange } from "@material-ui/core/colors";
 import { lightBlue } from "@material-ui/core/colors";
 
-export default {
+const theme = {
   palette: {
     primary: orange,
     secondary: lightBlue,
@@ -13,12 +13,16 @@ export default {
   formStyle: {
     appTitle: {
       fontFamily: "Recursive",
+      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      '&::-webkit-background-clip': 'text',
+      '&:: -webkit-text-fill-color': 'transparent',
 
-      background:
-        "-webkit-linear-gradient(90deg, rgb(255, 179, 0) 0%, rgb(189, 123, 0) 100%)",
-      backgroundClip: "text",
-      textFillColor: "transparent",
+     
+     
+     
+      
       filter: "drop-shadow(2px 3px #333)",
+     
     },
 
     form: {
@@ -315,3 +319,5 @@ export default {
     },
   },
 };
+
+export default theme;
